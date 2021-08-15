@@ -44,12 +44,10 @@ class TestCanvas(unittest.TestCase):
         i = 0
         for line in iter(ppm.splitlines()):
             if i == 3:
-                self.assertEqual (line, "255 0 0 0 0 0 0 0 0 0 0 0 0 0 0")
+                self.assertEqual (line.strip(), "255 0 0 0 0 0 0 0 0 0 0 0 0 0 0")
             elif i == 4:
-                self.assertEqual(line,  "0 0 0 0 0 0 0 128 0 0 0 0 0 0 0")
+                self.assertEqual(line.strip(),  "0 0 0 0 0 0 0 128 0 0 0 0 0 0 0")
             elif i == 5:
-                self.assertEqual(line,  "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255")
-            else:
-                break
+                self.assertEqual(line.strip(),  "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255")
             i += 1
         self.assertEqual(i, 6)
